@@ -235,5 +235,7 @@ for i in range (2,2) 처럼 범위가 이러한 경우일때는, 2~1 범위라�
 완전탐색 알고리즘이다. 즉, 가능한 모든 경우의 수를 모두 탐색하면서 요구조건에 충족되는 결과만을 가져온다.
 
 sys.stdin.readline() 가 input() 보다 빠른 입력방법이다.
+그리고 sys.stdin.readline() 를 사용하려면 import sys 써야한다.
+input()과 sys.stdin.readline()의 차이점 설명: https://buyandpray.tistory.com/7
 
 ```
