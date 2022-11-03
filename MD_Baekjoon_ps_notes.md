@@ -238,4 +238,6 @@ sys.stdin.readline() 가 input() 보다 빠른 입력방법이다.
 그리고 sys.stdin.readline() 를 사용하려면 import sys 써야한다.
 input()과 sys.stdin.readline()의 차이점 설명: https://buyandpray.tistory.com/7
 
+Counter과 most_common 에 대하여: https://www.daleseo.com/python-collections-counter/
+
 ```
