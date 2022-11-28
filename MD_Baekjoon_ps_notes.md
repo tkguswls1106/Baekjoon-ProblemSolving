@@ -240,4 +240,56 @@ input()과 sys.stdin.readline()의 차이점 설명: https://buyandpray.tistory.
 
 Counter과 most_common 에 대하여: https://www.daleseo.com/python-collections-counter/
 
+---------------------------------------
+
+< 정렬 방법 >
+
+리스트에서 단어의 길이 순으로 오름차순 정렬 방법은,
+리스트명.sort(key=len)
+
+a = [(1, 2), (0, 1), (5, 1), (5, 2), (3, 0)]
+
+# 인자없이 그냥 sorted()만 쓰면, 리스트 아이템의 각 요소 순서대로 정렬을 한다.
+b = sorted(a)
+# b = [(0, 1), (1, 2), (3, 0), (5, 1), (5, 2)]
+
+# key 인자에 함수를 넘겨주면 해당 함수의 반환값을 비교하여 순서대로 정렬한다.
+c = sorted(a, key = lambda x : x[0])
+# c = [(0, 1), (1, 2), (3, 0), (5, 1), (5, 2)]  // (이거, ?) 기준 정렬
+d = sorted(a, key = lambda x : x[1])
+# d = [(3, 0), (0, 1), (5, 1), (1, 2), (5, 2)]  // (?, 이거) 기준 정렬
+
+# 아이템 첫 번째 인자를 기준으로 오름차순으로 먼저 정렬하고,
+# 그리고 그 안에서 다음 두 번째 인자를 기준으로 내림차순으로 정렬하게 하려면, 다음과 같이 할 수 있다.
+e = [(1, 3), (0, 3), (1, 4), (1, 5), (0, 1), (2, 4)]
+f = sorted(e, key = lambda x : (x[0], -x[1]))
+# f = [(0, 3), (0, 1), (1, 5), (1, 4), (1, 3), (2, 4)]
+
+< 정렬 예시 >
+
+# 문제는 백준 1181.py
+
+N=int(input())
+arr_set = set()
+for i in range(N):
+    arr_set.add(input())
+arr = list(arr_set)
+arr.sort()  # arr.sort(key=len) 이거한 다음에
+arr.sort(key=len)  # arr.sort() 이거하는건 안됨.
+for i in range(len(arr)):
+    print(arr[i])
+
+# 이거도 가능
+# N=int(input())
+# arr_set = set()
+# for i in range(N):
+#     arr_set.add(input())
+# arr = list(arr_set)
+# arr2 = sorted(arr)  # arr2 = sorted(arr, key=len) 이거한 다음에
+# arr3 = sorted(arr2, key=len)  # arr3 = sorted(arr2) 이거하는건 안됨.
+# for i in range(len(arr3)):
+#     print(arr3[i])
+
+---------------------------------------
+
 ```
